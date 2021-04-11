@@ -23,6 +23,7 @@ class database{
         }
     }
 
+// Alle medewerkers
     public function getAllUsers(){
 
         $sql = "SELECT * FROM medewerker"; 
@@ -36,6 +37,7 @@ class database{
         return $result;
     }
 
+// Alle artikelen
     public function getAllArticles(){
 
         $sql = "SELECT * FROM artikel";
@@ -48,7 +50,8 @@ class database{
 
         return $result;
     }
-    
+ 
+// Login medewerker
     public function loginEmployee($username, $password){
         $sql = "SELECT * FROM medewerker WHERE gebruikersnaam= :username";
         
@@ -75,6 +78,7 @@ class database{
         }
     }
 
+// Login function klanten
     public function loginCustomer($username, $password){
         $sql = "SELECT * FROM klant WHERE gebruikersnaam= :username";
         
@@ -99,6 +103,48 @@ class database{
         }else{
             return $_SESSION['login_error'] = true;
         }
+    }
+
+// Delete artikelen
+    public function delete($sql, $placeholders, $file){
+
+        $stmt = $this->dbh->prepare($sql);
+
+        // $sql = 'SELECT * FROM medewerkers WHERE username=:uname';
+
+        $stmt->execute($placeholders);
+        header('location: '.$file);
+        exit;
+    }
+
+// Edit artikelen
+    public function update($sql, $placeholders, $file){
+
+        $stmt = $this->prepare($sql);
+
+        $stmt->execute($placeholders);
+        header('location: ' .$file);
+        exit;
+    }
+
+// Delete medewerkers
+    public function deleteMedewerker($sql, $placeholders, $file){
+
+        $stmt = $this->dbh->prepare($sql);
+
+        $stmt->execute($placeholders);
+        header('location: '.$file);
+        exit;
+    }
+
+// Edit medewerker
+    public function updateMedewerker($sql, $placeholders, $file){
+
+        $stmt = $this->prepare($sql);
+
+        $stmt->execute($placeholders);
+        header('location: ' .$file);
+        exit;
     }
 }
 ?>

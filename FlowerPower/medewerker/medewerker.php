@@ -28,7 +28,7 @@ if(!isset($_SESSION['medewerker'])){
             </div>
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
             <a href="./overzichtArtikelen/overzicht_artikelen.php">Overzicht artikelen</a>
-            <a href="./overzichtMedewerkers/overzicht_medewerker.php">overzicht medewerker</a>
+            <a href="./overzichtMedewerkers/overzicht_medewerker.php">Overzicht medewerker</a>
             <a href="#">bestelling per winkel</a>
         </div>
         <div id="main">

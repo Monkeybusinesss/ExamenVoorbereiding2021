@@ -26,7 +26,10 @@ $artikels = $DB->getAllArticles();
                     <tr>
                         <th scope="col">ArtikelCode</th>
                         <th scope="col">Artikel</th>
-                        <th scope="col">prijs</th>
+                        <th scope="col">Prijs</th>
+                        <th scope="col">Aantal</th>
+                        <th scope="col" colspan="1">Action</th>
+                        <th scope="col" colspan="2">New</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,6 +38,9 @@ $artikels = $DB->getAllArticles();
                             <th scope="row"><?php echo $artikel["artikelcode"];?></th>
                             <td><?php echo $artikel["artikel"];?></td>
                             <td><?php echo $artikel["prijs"];?></td>
+                            <td><?php echo $artikel["aantal"];?></td>
+                            <td><a href="delete_artikelen.php?id=<?php echo $artikel['artikelcode']?>">Delete</a></td>
+                            <td><a href="update_artikelen.php?id=<?php echo $artikel['artikelcode']?>">Edit</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

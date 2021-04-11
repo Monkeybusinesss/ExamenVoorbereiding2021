@@ -76,3 +76,31 @@ CREATE TABLE bestelling(
     FOREIGN KEY(klantcode) REFERENCES klant(klantcode),
     FOREIGN KEY(medewerkerscode) REFERENCES medewerker(medewerkerscode)
 );
+
+
+
+
+-- table medewerker info-example inserted
+INSERT INTO medewerker(voorletters, tussenvoegsels, achternaam, gebruikersnaam, wachtwoord)
+    VALUES
+		("M.C", "van", "Camen", "Micheal0289", "Micheal123"),
+		("A.G", NULL , "Gandak", "gandak0290", "Achmed123"),
+		("S.P", "van de", "Post", "Siana0291", "siana123"),
+		("P.D", "van", "Dijk", "peter0292", "dijk123"),
+		("L.S", Null, "Sauna", "lana0293", "sauna123"),
+		("F.P", Null, "Peters", "ferrit0294", "ferrit123");
+
+INSERT INTO artikel(artikel, prijs)
+    VALUES
+        ("tulpen", 1.95),
+        ("zonnebloemen", 1.55),
+        ("witte rozen", 2.85),
+        ("roze rozen", 1.05),
+        ("acia", 3.75),
+        ("orchidee", 7.95),
+        ("narcis", 4.95),
+        ("Madeliefje", 2.75),
+        ("Margriet", 2.65);
+
+ALTER TABLE artikel ADD aantal INT;
+-- DELETE FROM artikel WHERE artikelcode>=15;

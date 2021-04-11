@@ -29,6 +29,8 @@ $medewerkers = $DB->getAllUsers();
                         <th scope="col">tussenvoegsel</th>
                         <th scope="col">Achternaam</th>
                         <th scope="col">Gebruikersnaam</th>
+                        <th scope="col" colspan="1">Action</th>
+                        <th scope="col" colspan="2">Neww</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,6 +41,8 @@ $medewerkers = $DB->getAllUsers();
                             <td><?php echo $medewerker["tussenvoegsels"];?></td>
                             <td><?php echo $medewerker["achternaam"];?></td>
                             <td><?php echo $medewerker["gebruikersnaam"];?></td>
+                            <td><a href="delete_medewerker.php?id=<?php echo $medewerker['medewerkerscode']?>">Delete</a></td>
+                            <td><a href="update_medewerker.php?id=<?php echo $medewerker['medewerkerscode']?>">Edit</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
